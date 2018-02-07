@@ -42,7 +42,38 @@ The content of `decks/` are collection of presentation decks using the [reveal.j
 
 Lightbulb provides a lab provisioner utility for creating a personal lab environment for each student. Currently only Amazon Web Services (AWS) is supported in us-east-1 and us-west-1 with the foundation to support other regions in place.
 
-**Coming Soon.** Vagrant support for self-paced learning is planned. Legacy support from the previous generation of Lightbulb remains, but is in need of an overhaul.
+### Vagrant workshop environment
+
+Follow these instructions in order to set up a Vagrant test environment. This should work regardless the operating system you're running.
+
+Beforehand, ensure the following software is installed
+
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Vagrant](https://www.vagrantup.com/downloads.html)
+- (optionally) [Git](https://git-scm.com/downloads)
+
+You only need the `Vagrantfile`. Download it and preferrably put it in a separate directory.
+
+After that, open a shell and run the commands:
+
+```console
+$ vagrant up
+[ ... ]
+$ vagrant ssh
+[vagrant@ansible ~]$ ansible all -m ping
+ansible | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node-1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+[ ... ]
+```
+
+You can find the code examples and workshop assignments in the `lightbulb/` directory.
+
 
 ## Facilitator Guide
 
