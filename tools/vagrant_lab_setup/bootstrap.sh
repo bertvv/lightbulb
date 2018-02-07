@@ -23,6 +23,7 @@ readonly workshop_key="/home/${workshop_user}/.ssh/id_rsa"
 readonly workshop_inventory="/home/${workshop_user}/hosts.ini"
 readonly workshop_ansible_config="/home/${workshop_user}/.ansible.cfg"
 
+readonly workshop_git_repo="https://github.com/ansible/lightbulb.git"
 
 #
 # Functions
@@ -35,6 +36,7 @@ main() {
   install_vagrant_private_key
   configure_ansible
   install_inventory
+  install_lightbulb
 
 }
 
@@ -120,6 +122,7 @@ node-3 ansible_host=10.42.0.8
 [all:vars]
 ansible_user=vagrant
 _EOF_
+  chown "${workshop_user}:${workshop_user}" "${workshop_inventory}"
 }
 
 # This will generate an ansible.cfg file from a here document
@@ -141,6 +144,16 @@ no_target_syslog = False
 [ssh_connection]
 scp_if_ssh = True
 _EOF_
+}
+
+# Install the lightbulb repository
+install_lightbulb() {
+  if [ ! -d "/home/${workshop_user}/lightbulb" ]; then
+    info "Installing the Lightbulb Git repository for user ${workshop_user}"
+    su --command="git clone ${workshop_git_repo}" - "${workshop_user}"
+  else
+    info "Lightbulb already installed"
+  fi
 }
 
 # Usage: info [ARG]...
