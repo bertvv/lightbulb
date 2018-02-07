@@ -48,9 +48,9 @@ Follow these instructions in order to set up a Vagrant test environment. This sh
 
 Beforehand, ensure the following software is installed
 
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/downloads.html)
-- (optionally) [Git](https://git-scm.com/downloads)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* (optionally) [Git](https://git-scm.com/downloads)
 
 You only need the `Vagrantfile`. Download it and preferrably put it in a separate directory.
 
@@ -66,6 +66,7 @@ ansible | SUCCESS => {
     "ping": "pong"
 }
 node-1 | SUCCESS => {
+
     "changed": false,
     "ping": "pong"
 }
@@ -73,7 +74,6 @@ node-1 | SUCCESS => {
 ```
 
 You can find the code examples and workshop assignments in the `lightbulb/` directory.
-
 
 ## Facilitator Guide
 
