@@ -18,13 +18,12 @@ After that, open a shell and run the commands:
 > vagrant ssh
 [vagrant@ansible ~]$ ansible all -m ping
 ansible | SUCCESS => {
-    "changed": false, 
+    "changed": false,
     "ping": "pong"
 }
 node-1 | SUCCESS => {
-    "changed": false, 
+    "changed": false,
     "ping": "pong"
 }
 [ ... ]
 ```
-
