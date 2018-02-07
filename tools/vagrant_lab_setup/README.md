@@ -8,14 +8,14 @@ Beforehand, ensure the following software is installed
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - (optionally) [Git](https://git-scm.com/downloads)
 
-You need at least the `Vagrantfile` and the `bootstrap.sh` in this directory. Download them and put them together in a directory on your system.
+You only need the `Vagrantfile` in this directory. Download it and preferrably put it in a separate directory.
 
 After that, open a shell and run the commands:
 
 ```console
-> vagrant up
+$ vagrant up
 [ ... ]
-> vagrant ssh
+$ vagrant ssh
 [vagrant@ansible ~]$ ansible all -m ping
 ansible | SUCCESS => {
     "changed": false, 
