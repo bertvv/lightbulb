@@ -87,14 +87,14 @@ get_linux_distribution() {
 # The version in the repos is fairly current, so we'll install that
 install_ansible_fedora() {
   info "Fedora: installing Ansible from distribution repositories"
-  dnf -y install git ansible
+  dnf -y install git
 }
 
 # Install Ansible on a CentOS system from EPEL
 install_ansible_centos() {
   info "CentOS: installing Ansible from the EPEL repository"
   yum -y install epel-release
-  yum -y install git ansible
+  yum -y install git
 }
 
 # Install Ansible on a recent Ubuntu distribution, from the PPA
@@ -104,7 +104,7 @@ install_ansible_ubuntu() {
   apt-get -y install software-properties-common
   apt-add-repository -y ppa:ansible/ansible
   apt-get -y update
-  apt-get -y install git ansible
+  apt-get -y install git
 }
 
 # Install the Vagrant private key to SSH to the other nodes
